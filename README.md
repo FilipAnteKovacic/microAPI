@@ -1,7 +1,6 @@
 # MicroAPI
 CRUD API using GO&MongoDB
 
-
 ## Dependencies
 
 * github.com/globalsign/mgo     - mongoDB driver
@@ -17,9 +16,21 @@ CRUD API using GO&MongoDB
 
 ## Desc
 
+API handle CRUD functions
 
+```
+muxRouter.Handle("/", CreateHandler).Methods("POST")
+muxRouter.Handle("/{id}", ReadHandler).Methods("GET")
+muxRouter.Handle("/{id}", UpdateHandler).Methods("PUT")
+muxRouter.Handle("/{id}", DeleteHandler).Methods("DELETE")
+```
+
+For Create&Update send data in form-value 
+- key:body
+- value:JSON object
 
 Sample model for mongoDB in main.js
+- change to your model
 ```
 type ExampleData struct {
 	ID     string `json:"id" bson:"_id,omitempty"`
@@ -34,7 +45,7 @@ type ExampleData struct {
 mdbConn="localhost:27017" mdbName="foo" mdbCollection="bar" apiPort="80" go run main.go
 ```
 
-## DOCKER
+## Docker
 
 ```
 docker build -t microapi .
