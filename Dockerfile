@@ -9,7 +9,7 @@ RUN go get github.com/globalsign/mgo/bson
 RUN go get github.com/gorilla/mux
 RUN go get github.com/gorilla/handlers
 
-RUN go get github.com/FilipAnteKovacic/microapi/crud/
+RUN go get github.com/FilipAnteKovacic/microAPI/crud
 
 RUN go build
 RUN go install
