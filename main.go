@@ -4,9 +4,10 @@ import (
 	"encoding/json"
 	"io"
 	"log"
-	model "microAPI/crud"
 	"net/http"
 	"os"
+
+	model "github.com/FilipAnteKovacic/microAPI/crud"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
